@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurea Solis | Secteurs Desservis - Solutions par Industrie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFC107;
+            --primary-dark: #D4A017;
+            --primary-light: #FFD54F;
+            --primary-gradient: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
+            
+            --secondary: #19191e;
+            --secondary-dark: #000000;
+            --secondary-light: #000000;
+            --secondary-gradient: linear-gradient(135deg, #19191e 0%, #000000 100%);
+            
+            --white: #FFFFFF;
+            --light: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --gray: #6C757D;
+            --dark-gray: #495057;
+            --dark: #212529;
+            
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 { font-size: 3.75rem; }
+        h2 { font-size: 3rem; }
+        h3 { font-size: 2rem; }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 1rem;
+            z-index: 1001;
+        }
+
+        .logo-name {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.75rem;
+            color: var(--secondary);
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 0.25rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary-gradient);
+            color: var(--secondary);
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-sm);
+            z-index: 1001;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        /* Header */
+        .page-header {
+            padding-top: 12rem;
+            padding-bottom: 6rem;
+            background: linear-gradient(rgb(0 0 0 / 90%), rgb(55 49 4 / 78%)), url(https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80);
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .page-header h1 {
+            color: var(--white);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .page-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin-bottom: 2.5rem;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Secteurs Grid */
+        .secteurs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .secteur-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+            border: 1px solid var(--light-gray);
+        }
+
+        .secteur-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary);
+        }
+
+        .secteur-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .secteur-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .secteur-card:hover .secteur-image img {
+            transform: scale(1.1);
+        }
+
+        .secteur-content {
+            padding: 2rem;
+        }
+
+        .secteur-content h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .secteur-icon {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .secteur-solutions {
+            margin: 1.5rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .secteur-solutions li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .secteur-solutions li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Solutions par Secteur */
+        .solutions-detail {
+            background: var(--light);
+        }
+
+        .solution-category {
+            margin-bottom: 4rem;
+        }
+
+        .solution-category h3 {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .solutions-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .solution-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-left: 4px solid var(--secondary);
+        }
+
+        .solution-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--primary);
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .cta p {
+            color: rgba(26, 35, 126, 0.9);
+            margin-bottom: 2.5rem;
+            font-size: 1.25rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-dark);
+            color: var(--white);
+            padding: 6rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo .logo-name {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            .page-header h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 992px) {
+            .secteurs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.5rem; }
+            section { padding: 4rem 0; }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: var(--shadow-xl);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .page-header {
+                padding-top: 10rem;
+                padding-bottom: 4rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .secteurs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .page-header h1 { font-size: 2rem; }
+            .footer-content { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                 <a href="../index.html" class="logo">
+                        <div class="logo-text">
+                            <img src="../assets/img/logo_black.png" alt="" width="100px">
+                            <div class="logo-tagline">Énergie & Innovation</div>
+                        </div>
+                    </a>
+                    
+                
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="secteurs.html" class="active">Secteurs</a></li>
+                    <li><a href="actualite.html">Actualités</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <a href="contact.html" class="nav-cta">
+                    <i class="fas fa-bolt"></i>
+                    Demander un devis
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="separator">/</span>
+                <span>Secteurs</span>
+            </div>
+            
+            <h1>Secteurs Desservis</h1>
+            <p>Nous intervenons dans différents secteurs d'activité avec des solutions adaptées à chaque industrie.</p>
+        </div>
+    </header>
+
+    <!-- Secteurs Grid -->
+    <section class="secteurs">
+        <div class="container">
+            <h2 class="text-center">Nos Secteurs d'Intervention</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">Découvrez comment nous accompagnons chaque secteur avec des solutions spécifiques.</p>
+            
+            <div class="secteurs-grid">
+                <!-- Mines & Carrières -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mines & Carrières">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-mountain secteur-icon"></i> Mines & Carrières</h3>
+                        <p>Solutions énergétiques robustes pour les sites miniers isolés.</p>
+                        <ul class="secteur-solutions">
+                            <li>Alimentation des sites isolés</li>
+                            <li>Stations de pompage</li>
+                            <li>Systèmes de convoyage</li>
+                            <li>Éclairage de sécurité</li>
+                            <li>Solutions solaires hybrides</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Agro-industrie -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Agro-industrie">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-tractor secteur-icon"></i> Agro-industrie & Transformation</h3>
+                        <p>Solutions énergétiques pour l'industrie agroalimentaire.</p>
+                        <ul class="secteur-solutions">
+                            <li>Usines de transformation</li>
+                            <li>Unités de production</li>
+                            <li>Chambres froides</li>
+                            <li>Chaînes de conditionnement</li>
+                            <li>Systèmes d'irrigation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- BTP & Immobilier -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="BTP & Immobilier">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-hard-hat secteur-icon"></i> BTP & Immobilier</h3>
+                        <p>Installations électriques pour le bâtiment et l'immobilier.</p>
+                        <ul class="secteur-solutions">
+                            <li>Immeubles résidentiels</li>
+                            <li>Bâtiments commerciaux</li>
+                            <li>Résidences</li>
+                            <li>Infrastructures de construction</li>
+                            <li>Chantiers temporaires</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Infrastructures Publiques -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Infrastructures Publiques">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-landmark secteur-icon"></i> Infrastructures Publiques</h3>
+                        <p>Solutions pour les bâtiments et services publics.</p>
+                        <ul class="secteur-solutions">
+                            <li>Écoles et universités</li>
+                            <li>Centres de santé</li>
+                            <li>Mairies et administrations</li>
+                            <li>Bâtiments publics</li>
+                            <li>Éclairage public</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Tertiaire & Bureaux -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Tertiaire & Bureaux">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-building secteur-icon"></i> Tertiaire & Bureaux</h3>
+                        <p>Solutions pour les espaces de travail et services.</p>
+                        <ul class="secteur-solutions">
+                            <li>Sièges sociaux</li>
+                            <li>Centres de services</li>
+                            <li>Bureaux</li>
+                            <li>Espaces de coworking</li>
+                            <li>Centres commerciaux</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Télécommunication & TI -->
+                <div class="secteur-card">
+                    <div class="secteur-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Télécommunication & TI">
+                    </div>
+                    <div class="secteur-content">
+                        <h3><i class="fas fa-satellite-dish secteur-icon"></i> Télécommunication & TI</h3>
+                        <p>Solutions énergétiques pour l'industrie numérique.</p>
+                        <ul class="secteur-solutions">
+                            <li>Data centers</li>
+                            <li>Pylônes de télécommunication</li>
+                            <li>Antennes</li>
+                            <li>Centres de données</li>
+                            <li>Réseaux fibre optique</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions par Secteur -->
+    <section class="solutions-detail">
+        <div class="container">
+            <h2 class="text-center">Solutions Adaptées par Secteur</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 4rem;">Chaque secteur bénéficie de solutions spécifiques développées pour répondre à ses défis particuliers.</p>
+            
+            <div class="solution-category">
+                <h3>Pour les Mines & Carrières</h3>
+                <div class="solutions-list">
+                    <div class="solution-item">
+                        <h4>Énergie Solaire Hybride</h4>
+                        <p>Systèmes combinant solaire, batteries et générateurs pour les sites isolés.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Pompage Solaire</h4>
+                        <p>Solutions de pompage pour l'approvisionnement en eau des sites miniers.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Éclairage Sécurité</h4>
+                        <p>Éclairage LED haute performance pour la sécurité des opérations nocturnes.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="solution-category">
+                <h3>Pour l'Agro-industrie</h3>
+                <div class="solutions-list">
+                    <div class="solution-item">
+                        <h4>Froid Solaire</h4>
+                        <p>Systèmes de réfrigération alimentés par énergie solaire pour les chambres froides.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Irrigation Automatisée</h4>
+                        <p>Systèmes d'irrigation contrôlés par automate pour optimiser la consommation d'eau.</p>
+                    </div>
+                    <div class="solution-item">
+                        <h4>Transformation Agro</h4>
+                        <p>Solutions électriques pour les machines de transformation agroalimentaire.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Votre Secteur n'est pas Listé ?</h2>
+                <p>Nous développons des solutions sur mesure pour tous les secteurs d'activité. Contactez-nous pour discuter de vos besoins spécifiques.</p>
+                <a href="contact.html" class="btn btn-white">
+                    <i class="fas fa-paper-plane"></i>
+                    Parler à un Expert
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-name">AUREA SOLIS</div>
+                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et durabilité au service de votre développement.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Énergie Solaire</a></li>
+                        <li><a href="services.html">Électricité Industrielle</a></li>
+                        <li><a href="services.html">Automatisation</a></li>
+                        <li><a href="services.html">Solutions Thermiques</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Entreprise</h3>
+                    <ul class="footer-links">
+                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="secteurs.html">Nos Secteurs</a></li>
+                        <li><a href="actualite.html">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@aureasolis.bf">contact@aureasolis.bf</a></li>
+                        <li><a href="tel:+22670123456">+226 70 12 34 56</a></li>
+                        <li><a href="#">Ouagadougou, Burkina Faso</a></li>
+                        <li><a href="contact.html">Demander un Devis</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Aurea Solis Sarl. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if(window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if(this.getAttribute('href') === '#') return;
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    if(targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if(targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

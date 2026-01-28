@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation solaire de 500 kW pour une mine d'or au Burkina Faso | Aurea Solis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FFC107;
+            --primary-dark: #D4A017;
+            --primary-light: #FFD54F;
+            --primary-gradient: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
+            
+            --secondary: #1A237E;
+            --secondary-dark: #0D153D;
+            --secondary-light: #283593;
+            --secondary-gradient: linear-gradient(135deg, #1A237E 0%, #283593 100%);
+            
+            --white: #FFFFFF;
+            --light: #F8F9FA;
+            --light-gray: #E9ECEF;
+            --gray: #6C757D;
+            --dark-gray: #495057;
+            --dark: #212529;
+            
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --radius-full: 50px;
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        h1 { font-size: 3.75rem; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 2rem; }
+        h4 { font-size: 1.5rem; }
+
+        p {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            padding: 1rem 0;
+        }
+
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow-lg);
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 1rem;
+            z-index: 1001;
+        }
+
+        .logo-name {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.75rem;
+            color: var(--secondary);
+            line-height: 1;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-tagline {
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 0.25rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        .nav-links a:hover:after,
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--primary-gradient);
+            color: var(--secondary);
+            padding: 0.875rem 2rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 2px solid transparent;
+            box-shadow: var(--shadow-sm);
+            z-index: 1001;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--secondary);
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .mobile-menu-btn:hover {
+            background: var(--light);
+            color: var(--primary);
+        }
+
+        /* Article Header */
+        .article-header {
+            padding-top: 12rem;
+            padding-bottom: 4rem;
+            background: linear-gradient(rgba(26, 35, 126, 0.9), rgba(26, 35, 126, 0.8)),
+                        url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .article-header h1 {
+            color: var(--white);
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .breadcrumb a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .breadcrumb a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb .separator {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .article-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .article-meta i {
+            color: var(--primary);
+        }
+
+        .article-category {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.5rem 1.5rem;
+            border-radius: var(--radius-full);
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Article Content */
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 0;
+        }
+
+        .article-hero-image {
+            width: 100%;
+            height: 500px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-bottom: 3rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .article-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .article-hero-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .article-body {
+            font-size: 1.125rem;
+            line-height: 1.9;
+        }
+
+        .article-body h2 {
+            margin-top: 3rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--primary-light);
+        }
+
+        .article-body h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .article-body p {
+            margin-bottom: 1.5rem;
+        }
+
+        .article-body ul, .article-body ol {
+            margin: 1.5rem 0 2rem 2rem;
+        }
+
+        .article-body li {
+            margin-bottom: 0.75rem;
+            padding-left: 0.5rem;
+        }
+
+        .article-body blockquote {
+            border-left: 4px solid var(--primary);
+            padding: 2rem;
+            margin: 3rem 0;
+            background: var(--light);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            font-style: italic;
+            font-size: 1.25rem;
+            color: var(--secondary);
+            position: relative;
+        }
+
+        .article-body blockquote:before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .article-body blockquote cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        /* Stats Section */
+        .article-stats {
+            background: var(--secondary-gradient);
+            color: var(--white);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            margin: 3rem 0;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .article-stats h3 {
+            color: var(--white);
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-lg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Gallery */
+        .article-gallery {
+            margin: 3rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--white);
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        /* Share Section */
+        .share-section {
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 2px solid var(--light-gray);
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .share-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .share-text h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .share-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .share-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .share-btn.facebook {
+            background: #1877F2;
+            color: var(--white);
+        }
+
+        .share-btn.linkedin {
+            background: #0A66C2;
+            color: var(--white);
+        }
+
+        .share-btn.twitter {
+            background: #1DA1F2;
+            color: var(--white);
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: var(--white);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Author Section */
+        .author-section {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: var(--radius-xl);
+            margin: 3rem 0;
+        }
+
+        .author-content {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            margin-bottom: 0.5rem;
+        }
+
+        .author-title {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .author-bio {
+            color: var(--gray);
+            margin-bottom: 0;
+        }
+
+        /* Related Articles */
+        .related-articles {
+            background: var(--light);
+            padding: 4rem 0;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .related-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: var(--transition);
+        }
+
+        .related-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .related-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .related-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .related-card:hover .related-image img {
+            transform: scale(1.1);
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-content h4 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .related-content h4 a {
+            color: var(--secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .related-content h4 a:hover {
+            color: var(--primary);
+        }
+
+        .related-meta {
+            display: flex;
+            gap: 1rem;
+            color: var(--gray);
+            font-size: 0.875rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Newsletter */
+        .article-newsletter {
+            background: var(--secondary-gradient);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .article-newsletter h2 {
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .article-newsletter p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        .newsletter-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-body);
+            font-size: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-full);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: var(--secondary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .btn-white {
+            background: var(--white);
+            color: var(--secondary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-white:hover {
+            background: transparent;
+            color: var(--white);
+            border-color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary-dark);
+            color: var(--white);
+            padding: 6rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-logo .logo-name {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-logo p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: var(--white);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-column h3 {
+            color: var(--white);
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.875rem;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            margin: 2rem 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .toc h3 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+        }
+
+        .toc li {
+            margin-bottom: 0.75rem;
+        }
+
+        .toc a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .toc a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .toc a:before {
+            content: '#';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            text-decoration: none;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            h1 { font-size: 3rem; }
+            h2 { font-size: 2.5rem; }
+            .article-header h1 { font-size: 3rem; }
+        }
+
+        @media (max-width: 992px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .author-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .share-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 0 1.5rem; }
+            section { padding: 4rem 0; }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--white);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                box-shadow: var(--shadow-xl);
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-cta {
+                display: none;
+            }
+            
+            .article-header {
+                padding-top: 10rem;
+                padding-bottom: 3rem;
+            }
+            
+            .article-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .article-hero-image {
+                height: 300px;
+            }
+            
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                flex-direction: column;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .container { padding: 0 1rem; }
+            .article-header h1 { font-size: 2rem; }
+            .footer-content { grid-template-columns: 1fr; }
+            .article-meta { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+            .share-buttons { flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <div class="logo-text">
+                        <img src="../assets/img/logo_black.png" alt="" width="100px">
+                        <div class="logo-tagline">Énergie & Innovation</div>
+                    </div>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="../index.html">Accueil</a></li>
+                    <li><a href="apropos.html">À propos</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="secteurs.html">Secteurs</a></li>
+                    <li><a href="actualite.html" class="active">Actualités</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                
+                <a href="contact.html" class="nav-cta">
+                    <i class="fas fa-bolt"></i>
+                    Demander un devis
+                </a>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Accueil</a>
+                <span class="separator">/</span>
+                <a href="actualite.html">Actualités</a>
+                <span class="separator">/</span>
+                <span>Projets Réalisés</span>
+            </div>
+            
+            <span class="article-category">Projets Réalisés</span>
+            <h1>Installation solaire de 500 kW pour une mine d'or au Burkina Faso</h1>
+            
+            <div class="article-meta">
+                <span><i class="far fa-calendar"></i> 15 Novembre 2023</span>
+                <span><i class="far fa-clock"></i> 5 min de lecture</span>
+                <span><i class="far fa-user"></i> Par Jean Kaboré</span>
+                <span><i class="far fa-eye"></i> 2,548 vues</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <section class="article-content">
+        <div class="container">
+            <!-- Hero Image -->
+            <div class="article-hero-image">
+                <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                     alt="Installation solaire sur site minier">
+            </div>
+
+            <!-- Table of Contents -->
+            <div class="toc">
+                <h3>Sommaire de l'article</h3>
+                <ul>
+                    <li><a href="#contexte">Le contexte et le défi</a></li>
+                    <li><a href="#solution">Notre solution technique</a></li>
+                    <li><a href="#realisation">Déroulement du projet</a></li>
+                    <li><a href="#resultats">Résultats et bénéfices</a></li>
+                    <li><a href="#perspectives">Perspectives d'extension</a></li>
+                </ul>
+            </div>
+
+            <!-- Article Body -->
+            <div class="article-body">
+                <h2 id="contexte">Le Contexte et le Défi</h2>
+                <p>Dans la région de l'Est du Burkina Faso, une importante mine d'or opère depuis plusieurs années. Située à plus de 200 kilomètres du réseau électrique national, cette installation industrielle dépendait entièrement de générateurs diesel pour son alimentation énergétique.</p>
+                
+                <p>Le client faisait face à plusieurs défis majeurs :</p>
+                
+                <ul>
+                    <li><strong>Coûts énergétiques élevés :</strong> La consommation de diesel représentait plus de 30% des coûts opérationnels totaux</li>
+                    <li><strong>Instabilité d'approvisionnement :</strong> Les livraisons de carburant étaient souvent retardées en raison de l'éloignement du site</li>
+                    <li><strong>Impact environnemental :</strong> Les émissions de CO₂ atteignaient plus de 1,200 tonnes par an</li>
+                    <li><strong>Maintenance intensive :</strong> Les générateurs diesel nécessitaient un entretien constant et coûteux</li>
+                    <li><strong>Bruit et pollution :</strong> L'exploitation 24h/24 des générateurs créait des nuisances pour le personnel</li>
+                </ul>
+
+                <p>Face à ces défis, la direction de la mine a contacté Aurea Solis pour étudier la possibilité d'intégrer des énergies renouvelables dans leur mix énergétique.</p>
+
+                <h2 id="solution">Notre Solution Technique</h2>
+                <p>Après une étude approfondie du site et des besoins énergétiques, notre équipe d'ingénieurs a conçu une solution solaire hybride complète et robuste, adaptée aux conditions spécifiques du site minier.</p>
+
+                <h3>Architecture du système</h3>
+                <p>L'installation comprend plusieurs composants clés :</p>
+                
+                <ol>
+                    <li><strong>Champ photovoltaïque :</strong> 1,200 panneaux solaires de 415W chacun, répartis sur 3,000 m²</li>
+                    <li><strong>Système de stockage :</strong> Batteries lithium-fer-phosphate (LFP) de 800 kWh pour l'autonomie nocturne</li>
+                    <li><strong>Onduleurs hybrides :</strong> 2 unités de 250 kW permettant la gestion intelligente des flux énergétiques</li>
+                    <li><strong>Contrôleur de gestion :</strong> Système SCADA pour la supervision et l'optimisation en temps réel</li>
+                    <li><strong>Intégration avec l'existant :</strong> Interface avec les 4 générateurs diesel de 500 kW chacun</li>
+                </ol>
+
+                <blockquote>
+                    "La particularité de ce projet réside dans son système de gestion énergétique intelligent. L'algorithme prédictif analyse les prévisions météorologiques et les profils de consommation pour optimiser l'utilisation de l'énergie solaire et minimiser le recours aux générateurs."
+                    <cite>– Jean Kaboré, Chef de Projet chez Aurea Solis</cite>
+                </blockquote>
+
+                <!-- Stats Section -->
+                <div class="article-stats">
+                    <h3>Chiffres Clés du Projet</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">500 kW</span>
+                            <span class="stat-label">Puissance installée</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Réduction carburant</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">800 t</span>
+                            <span class="stat-label">CO₂ évité annuellement</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3,5 ans</span>
+                            <span class="stat-label">Retour sur investissement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Innovations techniques</h3>
+                <p>Plusieurs innovations ont été intégrées à ce projet :</p>
+                
+                <ul>
+                    <li><strong>Système de refroidissement actif :</strong> Pour maintenir les panneaux à température optimale malgré les fortes chaleurs</li>
+                    <li><strong>Technologie anti-poussière :</strong> Revêtement spécial pour réduire l'encrassement des panneaux</li>
+                    <li><strong>Monitoring à distance :</strong> Surveillance 24h/24 depuis notre centre de contrôle à Ouagadougou</li>
+                    <li><strong>Prédiction de production :</strong> Algorithmes d'IA pour anticiper la production solaire</li>
+                </ul>
+
+                <h2 id="realisation">Déroulement du Projet</h2>
+                <p>Le projet s'est déroulé sur une période de 6 mois, avec des étapes soigneusement planifiées pour minimiser l'impact sur les opérations de la mine.</p>
+
+                <!-- Gallery -->
+                <div class="article-gallery">
+                    <h3>Galerie du Projet</h3>
+                    <div class="gallery-grid">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Site minier">
+                            <div class="gallery-caption">Site minier avant l'installation</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Installation panneaux">
+                            <div class="gallery-caption">Installation des structures</div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Salle de contrôle">
+                            <div class="gallery-caption">Salle de contrôle intelligent</div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>Phases du projet</h3>
+                <p><strong>Phase 1 (1 mois) : Étude et conception</strong><br>
+                Analyse des besoins, étude de faisabilité, modélisation énergétique, conception détaillée et validation technique.</p>
+
+                <p><strong>Phase 2 (3 mois) : Approvisionnement et logistique</strong><br>
+                Sélection des équipements, transport vers le site isolé, préparation des infrastructures.</p>
+
+                <p><strong>Phase 3 (2 mois) : Installation et mise en service</strong><br>
+                Montage des structures, installation des panneaux, câblage, tests et formation du personnel.</p>
+
+                <p>Le projet a été réalisé avec zéro accident et un respect strict des délais impartis.</p>
+
+                <h2 id="resultats">Résultats et Bénéfices</h2>
+                <p>Depuis sa mise en service en octobre 2023, l'installation a dépassé toutes les attentes en termes de performance et de rentabilité.</p>
+
+                <h3>Performances énergétiques</h3>
+                <p>Le système produit en moyenne 750 MWh d'électricité par an, couvrant ainsi 65% des besoins énergétiques de la mine pendant la journée et 40% sur 24 heures.</p>
+
+                <h3>Avantages économiques</h3>
+                <ul>
+                    <li><strong>Économies annuelles :</strong> 280,000 € sur les coûts de carburant</li>
+                    <li><strong>ROI :</strong> Retour sur investissement prévu en 3,5 ans</li>
+                    <li><strong>Réduction maintenance :</strong> 40% moins d'entretien sur les générateurs</li>
+                    <li><strong>Stabilité des coûts :</strong> Protection contre la volatilité des prix du pétrole</li>
+                </ul>
+
+                <h3>Avantages environnementaux</h3>
+                <ul>
+                    <li><strong>Réduction CO₂ :</strong> 800 tonnes par an</li>
+                    <li><strong>Diminution bruit :</strong> Réduction significative des nuisances sonores</li>
+                    <li><strong>Pas d'émissions locales :</strong> Amélioration de la qualité de l'air sur site</li>
+                    <li><strong>Consommation eau :</strong> Réduction de 90% par rapport au refroidissement des générateurs</li>
+                </ul>
+
+                <h2 id="perspectives">Perspectives d'Extension</h2>
+                <p>Suite au succès de cette première phase, la mine a déjà programmé une extension du système pour atteindre 1 MW de puissance solaire d'ici fin 2024.</p>
+
+                <p>Les prochaines étapes prévues incluent :</p>
+                
+                <ol>
+                    <li><strong>Extension du champ solaire :</strong> Ajout de 600 panneaux supplémentaires</li>
+                    <li><strong>Augmentation du stockage :</strong> Passage à 1,5 MWh de capacité batterie</li>
+                    <li><strong>Automatisation des processus :</strong> Intégration avec les systèmes de production minière</li>
+                    <li><strong>Éclairage solaire :</strong> Remplacement de l'éclairage conventionnel par des LED solaires</li>
+                </ol>
+
+                <p>Ce projet démontre que les solutions solaires hybrides sont non seulement viables pour les sites industriels isolés en Afrique, mais qu'elles représentent également un investissement stratégique avec un retour économique rapide et des bénéfices environnementaux significatifs.</p>
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+                <div class="share-content">
+                    <div class="share-text">
+                        <h4>Cet article vous a plu ?</h4>
+                        <p>Partagez-le avec vos collègues et amis</p>
+                    </div>
+                    <div class="share-buttons">
+                        <a href="#" class="share-btn facebook">
+                            <i class="fab fa-facebook-f"></i>
+                            Facebook
+                        </a>
+                        <a href="#" class="share-btn linkedin">
+                            <i class="fab fa-linkedin-in"></i>
+                            LinkedIn
+                        </a>
+                        <a href="#" class="share-btn twitter">
+                            <i class="fab fa-twitter"></i>
+                            Twitter
+                        </a>
+                        <a href="#" class="share-btn whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Author Section -->
+            <div class="author-section">
+                <div class="author-content">
+                    <div class="author-avatar">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Jean Kaboré">
+                    </div>
+                    <div class="author-info">
+                        <h4>Jean Kaboré</h4>
+                        <div class="author-title">Chef de Projet Senior - Solutions Énergétiques</div>
+                        <p class="author-bio">Ingénieur électrique avec 15 ans d'expérience dans les énergies renouvelables. Jean a dirigé plus de 50 projets solaires à travers l'Afrique de l'Ouest. Passionné par l'innovation énergétique et le développement durable.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Articles -->
+    <section class="related-articles">
+        <div class="container">
+            <h2>Articles Similaires</h2>
+            <p>Découvrez d'autres projets et articles qui pourraient vous intéresser</p>
+            
+            <div class="related-grid">
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Échangeurs de chaleur">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar"></i> 20 Oct 2023</span>
+                            <span><i class="far fa-clock"></i> 5 min</span>
+                        </div>
+                        <h4><a href="article-echangeurs.html">Modernisation des échangeurs de chaleur dans une usine agroalimentaire</a></h4>
+                    </div>
+                </article>
+                
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Automatisation industrielle">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar"></i> 10 Nov 2023</span>
+                            <span><i class="far fa-clock"></i> 4 min</span>
+                        </div>
+                        <h4><a href="article-automatisation.html">L'IA dans l'automatisation industrielle : ce qui change en 2023</a></h4>
+                    </div>
+                </article>
+                
+                <article class="related-card">
+                    <div class="related-image">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solaire résidentiel">
+                    </div>
+                    <div class="related-content">
+                        <div class="related-meta">
+                            <span><i class="far fa-calendar"></i> 28 Oct 2023</span>
+                            <span><i class="far fa-clock"></i> 6 min</span>
+                        </div>
+                        <h4><a href="article-residentiel.html">Le solaire résidentiel au Burkina Faso : guide complet 2023</a></h4>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="article-newsletter">
+        <div class="container">
+            <h2>Ne Manquez Aucun Projet</h2>
+            <p>Inscrivez-vous à notre newsletter pour recevoir nos derniers articles et études de cas directement dans votre boîte mail.</p>
+            
+            <form class="newsletter-form">
+                <div class="form-group">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        S'abonner
+                    </button>
+                </div>
+                <p style="font-size: 0.875rem; opacity: 0.8;">En vous abonnant, vous acceptez de recevoir nos communications. Vous pouvez vous désabonner à tout moment.</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-name">AUREA SOLIS</div>
+                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et durabilité au service de votre développement.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="services.html">Énergie Solaire</a></li>
+                        <li><a href="services.html">Électricité Industrielle</a></li>
+                        <li><a href="services.html">Automatisation</a></li>
+                        <li><a href="services.html">Solutions Thermiques</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Entreprise</h3>
+                    <ul class="footer-links">
+                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="secteurs.html">Nos Secteurs</a></li>
+                        <li><a href="actualite.html">Actualités</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:contact@aureasolis.bf">contact@aureasolis.bf</a></li>
+                        <li><a href="tel:+22670123456">+226 70 12 34 56</a></li>
+                        <li><a href="#">Ouagadougou, Burkina Faso</a></li>
+                        <li><a href="contact.html">Demander un Devis</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Aurea Solis Sarl. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+            
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+                
+                // Back to top button
+                const backToTop = document.getElementById('backToTop');
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    
+                    if (targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 100,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+            
+            // Back to top functionality
+            document.getElementById('backToTop').addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Table of Contents - highlight current section
+            const sections = document.querySelectorAll('h2[id], h3[id]');
+            const tocLinks = document.querySelectorAll('.toc a');
+            
+            function updateTOCHighlight() {
+                let currentSection = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (window.scrollY >= (sectionTop - 150)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                tocLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', updateTOCHighlight);
+            
+            // Newsletter form
+            const newsletterForm = document.querySelector('.newsletter-form');
+            
+            if (newsletterForm) {
+                newsletterForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const email = this.querySelector('input[type="email"]').value;
+                    
+                    // Simulate subscription
+                    alert('Merci pour votre inscription ! Vous recevrez bientôt nos prochains articles.');
+                    this.reset();
+                });
+            }
+            
+            // Initialize
+            updateTOCHighlight();
+            
+            // Add reading time calculation
+            function calculateReadingTime() {
+                const text = document.querySelector('.article-body').innerText;
+                const wordCount = text.split(/\s+/).length;
+                const readingTime = Math.ceil(wordCount / 200); // 200 words per minute
+                
+                // Update reading time in meta if needed
+                const readingTimeElement = document.querySelector('.article-meta span:nth-child(2)');
+                if (readingTimeElement && readingTime > 0) {
+                    readingTimeElement.innerHTML = `<i class="far fa-clock"></i> ${readingTime} min de lecture`;
+                }
+            }
+            
+            calculateReadingTime();
+        });
+    </script>
+</body>
+</html>

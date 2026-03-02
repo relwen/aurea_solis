@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #FFC107;
             --primary-dark: #D4A017;
             --primary-light: #FFD54F;
             --primary-gradient: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
-            
+
             --secondary: #000;
             --secondary-dark: #000;
             --secondary-light: #000;
             --secondary-gradient: linear-gradient(135deg, #000 0%, #000 100%);
-            
+
             --white: #FFFFFF;
             --light: #F8F9FA;
             --light-gray: #E9ECEF;
             --gray: #6C757D;
             --dark-gray: #495057;
             --dark: #212529;
-            
+
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
+
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
             --radius-full: 50px;
-            
+
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
+
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
@@ -63,7 +66,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: 800;
             line-height: 1.2;
@@ -71,10 +79,21 @@
             margin-bottom: 1.5rem;
         }
 
-        h1 { font-size: 3.75rem; }
-        h2 { font-size: 3rem; }
-        h3 { font-size: 2rem; }
-        h4 { font-size: 1.5rem; }
+        h1 {
+            font-size: 3.75rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
+
+        h4 {
+            font-size: 1.5rem;
+        }
 
         p {
             font-size: 1.125rem;
@@ -713,33 +732,46 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2.5rem; }
-            .page-header h1 { font-size: 3rem; }
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 992px) {
             .featured-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .featured-image {
                 height: 300px;
             }
-            
+
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
-            
+
             .form-group {
                 flex-direction: column;
             }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 1.5rem; }
-            section { padding: 4rem 0; }
-            
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -754,43 +786,106 @@
                 transition: var(--transition);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 right: 0;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-cta {
                 display: none;
             }
-            
+
             .page-header {
                 padding-top: 10rem;
                 padding-bottom: 4rem;
             }
-            
+
             .page-header h1 {
                 font-size: 2.5rem;
             }
-            
+
             .articles-grid {
                 grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 576px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .container { padding: 0 1rem; }
-            .page-header h1 { font-size: 2rem; }
-            .footer-content { grid-template-columns: 1fr; }
-            .categories-filter { justify-content: flex-start; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-filter {
+                justify-content: flex-start;
+            }
+        }
+
+        /* Dropdown CSS */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+            border-top: 3px solid var(--primary);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--dark-gray) !important;
+            padding: 0.75rem 1.5rem !important;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95rem !important;
+            font-weight: 500 !important;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:after {
+            display: none !important;
+            /* No underline on dropdown items */
+        }
+
+        .dropdown-content a:hover {
+            color: var(--primary) !important;
+            background-color: var(--light);
+            padding-left: 2rem !important;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -802,20 +897,31 @@
                         <div class="logo-tagline">Énergie & Innovation</div>
                     </div>
                 </a>
-                
+
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="apropos.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="apropos.html">Qui sommes-nous ?</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="dropbtn">Services <i class="fas fa-chevron-down"
+                                style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html?tab=tab1">Energie Solaire</a>
+                            <a href="services.html?tab=tab1">Électricité Industrielle</a>
+                            <a href="services.html?tab=tab2">Automatisation</a>
+                            <a href="services.html?tab=tab2">Solution minière</a>
+                            <a href="services.html?tab=tab3">Solution thermique</a>
+                            <a href="services.html?tab=tab4">Audit et Conseil</a>
+                        </div>
+                    </li>
                     <li><a href="secteurs.html">Secteurs</a></li>
                     <li><a href="actualite.html" class="active">Actualités</a></li>
                 </ul>
-                
+
                 <a href="contact.html" class="nav-cta">
                     <i class="fas fa-envelope"></i>
                     Contact
                 </a>
-                
+
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -831,9 +937,10 @@
                 <span class="separator">/</span>
                 <span>Actualités</span>
             </div>
-            
+
             <h1>Actualités & Articles</h1>
-            <p>Restez informé des dernières nouvelles énergétiques, des innovations technologiques et des projets réalisés par Aurea Solis.</p>
+            <p>Restez informé des dernières nouvelles énergétiques, des innovations technologiques et des projets
+                réalisés par Aurea Solis.</p>
         </div>
     </header>
 
@@ -857,17 +964,20 @@
             <div class="featured-article">
                 <div class="featured-content">
                     <div class="featured-image">
-                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Projet solaire industriel">
+                        <img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                            alt="Projet solaire industriel">
                     </div>
                     <div class="featured-text">
                         <span class="article-category">Projets Réalisés</span>
                         <h2>Installation solaire de 500 kW pour une mine d'or au Burkina Faso</h2>
                         <p class="article-meta">
-                            <span><i class="far fa-calendar"></i> 15 Novembre 2023</span>
+                            <span><i class="far fa-calendar"></i> 15 Novembre 2026</span>
                             <span><i class="far fa-clock"></i> 5 min de lecture</span>
                             <span><i class="far fa-user"></i> Par Jean Kaboré</span>
                         </p>
-                        <p class="article-excerpt">Découvrez comment nous avons mis en place une solution solaire hybride pour alimenter une mine d'or éloignée du réseau électrique national. Une réduction de 70% de la consommation de carburant a été réalisée.</p>
+                        <p class="article-excerpt">Découvrez comment nous avons mis en place une solution solaire
+                            hybride pour alimenter une mine d'or éloignée du réseau électrique national. Une réduction
+                            de 70% de la consommation de carburant a été réalisée.</p>
                         <a href="article-mine-solaire.html" class="article-link">
                             Lire l'article complet
                             <i class="fas fa-arrow-right"></i>
@@ -885,16 +995,19 @@
                 <!-- Article 1 -->
                 <article class="article-card" data-category="innovation">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Automatisation industrielle">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Automatisation industrielle">
                         <span class="article-category">Innovations</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 10 Novembre 2023</span>
+                            <span><i class="far fa-calendar"></i> 10 Novembre 2026</span>
                             <span><i class="far fa-clock"></i> 4 min</span>
                         </div>
-                        <h3><a href="article-automatisation.html">L'IA dans l'automatisation industrielle : ce qui change en 2023</a></h3>
-                        <p class="article-excerpt">Comment l'intelligence artificielle révolutionne les systèmes d'automatisation et quels bénéfices pour les industries africaines.</p>
+                        <h3><a href="article-automatisation.html">L'IA dans l'automatisation industrielle : ce qui
+                                change en 2026</a></h3>
+                        <p class="article-excerpt">Comment l'intelligence artificielle révolutionne les systèmes
+                            d'automatisation et quels bénéfices pour les industries africaines.</p>
                         <a href="article-automatisation.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -905,16 +1018,19 @@
                 <!-- Article 2 -->
                 <article class="article-card" data-category="technique">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Maintenance préventive">
+                        <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Maintenance préventive">
                         <span class="article-category">Conseils Techniques</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 5 Novembre 2023</span>
+                            <span><i class="far fa-calendar"></i> 5 Novembre 2026</span>
                             <span><i class="far fa-clock"></i> 3 min</span>
                         </div>
-                        <h3><a href="article-maintenance.html">5 bonnes pratiques pour la maintenance de vos panneaux solaires</a></h3>
-                        <p class="article-excerpt">Nos experts partagent leurs conseils pour optimiser la durée de vie et les performances de vos installations photovoltaïques.</p>
+                        <h3><a href="article-maintenance.html">5 bonnes pratiques pour la maintenance de vos panneaux
+                                solaires</a></h3>
+                        <p class="article-excerpt">Nos experts partagent leurs conseils pour optimiser la durée de vie
+                            et les performances de vos installations photovoltaïques.</p>
                         <a href="article-maintenance.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -925,16 +1041,19 @@
                 <!-- Article 3 -->
                 <article class="article-card" data-category="energie">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Solaire résidentiel">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Solaire résidentiel">
                         <span class="article-category">Énergie Solaire</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 28 Octobre 2023</span>
+                            <span><i class="far fa-calendar"></i> 28 Octobre 2026</span>
                             <span><i class="far fa-clock"></i> 6 min</span>
                         </div>
-                        <h3><a href="article-residentiel.html">Le solaire résidentiel au Burkina Faso : guide complet 2023</a></h3>
-                        <p class="article-excerpt">Tout ce que vous devez savoir sur l'installation de panneaux solaires pour votre maison : coûts, rentabilité et démarches.</p>
+                        <h3><a href="article-residentiel.html">Le solaire résidentiel au Burkina Faso : guide complet
+                                2026</a></h3>
+                        <p class="article-excerpt">Tout ce que vous devez savoir sur l'installation de panneaux solaires
+                            pour votre maison : coûts, rentabilité et démarches.</p>
                         <a href="article-residentiel.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -945,16 +1064,19 @@
                 <!-- Article 4 -->
                 <article class="article-card" data-category="projets">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Échangeurs de chaleur">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Échangeurs de chaleur">
                         <span class="article-category">Projets Réalisés</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 20 Octobre 2023</span>
+                            <span><i class="far fa-calendar"></i> 20 Octobre 2026</span>
                             <span><i class="far fa-clock"></i> 5 min</span>
                         </div>
-                        <h3><a href="article-echangeurs.html">Modernisation des échangeurs de chaleur dans une usine agroalimentaire</a></h3>
-                        <p class="article-excerpt">Comment nous avons amélioré l'efficacité énergétique de 40% dans une unité de transformation laitière à Bobo-Dioulasso.</p>
+                        <h3><a href="article-echangeurs.html">Modernisation des échangeurs de chaleur dans une usine
+                                agroalimentaire</a></h3>
+                        <p class="article-excerpt">Comment nous avons amélioré l'efficacité énergétique de 40% dans une
+                            unité de transformation laitière à Bobo-Dioulasso.</p>
                         <a href="article-echangeurs.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -965,16 +1087,19 @@
                 <!-- Article 5 -->
                 <article class="article-card" data-category="industrie">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrie 4.0">
+                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Industrie 4.0">
                         <span class="article-category">Industrie</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 15 Octobre 2023</span>
+                            <span><i class="far fa-calendar"></i> 15 Octobre 2026</span>
                             <span><i class="far fa-clock"></i> 7 min</span>
                         </div>
-                        <h3><a href="article-industrie4.html">L'industrie 4.0 en Afrique de l'Ouest : défis et opportunités</a></h3>
-                        <p class="article-excerpt">Analyse des enjeux de la digitalisation industrielle dans notre région et comment les entreprises peuvent se préparer.</p>
+                        <h3><a href="article-industrie4.html">L'industrie 4.0 en Afrique de l'Ouest : défis et
+                                opportunités</a></h3>
+                        <p class="article-excerpt">Analyse des enjeux de la digitalisation industrielle dans notre
+                            région et comment les entreprises peuvent se préparer.</p>
                         <a href="article-industrie4.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -985,16 +1110,19 @@
                 <!-- Article 6 -->
                 <article class="article-card" data-category="energie">
                     <div class="article-image">
-                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Batteries solaires">
+                        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Batteries solaires">
                         <span class="article-category">Énergie Solaire</span>
                     </div>
                     <div class="article-content">
                         <div class="article-meta">
-                            <span><i class="far fa-calendar"></i> 10 Octobre 2023</span>
+                            <span><i class="far fa-calendar"></i> 10 Octobre 2026</span>
                             <span><i class="far fa-clock"></i> 4 min</span>
                         </div>
-                        <h3><a href="article-batteries.html">Comparatif 2023 : les meilleures batteries pour systèmes solaires</a></h3>
-                        <p class="article-excerpt">Guide d'achat pour choisir la technologie de stockage adaptée à vos besoins : lithium, plomb, durée de vie et coût.</p>
+                        <h3><a href="article-batteries.html">Comparatif 2026 : les meilleures batteries pour systèmes
+                                solaires</a></h3>
+                        <p class="article-excerpt">Guide d'achat pour choisir la technologie de stockage adaptée à vos
+                            besoins : lithium, plomb, durée de vie et coût.</p>
                         <a href="article-batteries.html" class="article-link">
                             Lire l'article
                             <i class="fas fa-arrow-right"></i>
@@ -1023,7 +1151,7 @@
         <div class="container">
             <h2>Restez Informé</h2>
             <p>Inscrivez-vous à notre newsletter pour recevoir les derniers articles et actualités énergétiques.</p>
-            
+
             <form class="newsletter-form">
                 <div class="form-group">
                     <input type="email" placeholder="Votre adresse email" required>
@@ -1032,7 +1160,8 @@
                         S'abonner
                     </button>
                 </div>
-                <p style="font-size: 0.875rem; opacity: 0.8;">En vous abonnant, vous acceptez de recevoir nos communications. Vous pouvez vous désabonner à tout moment.</p>
+                <p style="font-size: 0.875rem; opacity: 0.8;">En vous abonnant, vous acceptez de recevoir nos
+                    communications. Vous pouvez vous désabonner à tout moment.</p>
             </form>
         </div>
     </section>
@@ -1043,7 +1172,8 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-name">AUREA SOLIS</div>
-                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et durabilité au service de votre développement.</p>
+                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et
+                        durabilité au service de votre développement.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -1051,7 +1181,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
@@ -1061,17 +1191,17 @@
                         <li><a href="services.html">Solutions Thermiques</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Entreprise</h3>
                     <ul class="footer-links">
-                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="apropos.html">Qui sommes-nous ?</a></li>
                         <li><a href="secteurs.html">Nos Secteurs</a></li>
                         <li><a href="actualite.html">Actualités</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul class="footer-links">
@@ -1082,9 +1212,9 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; 2023 Aurea Solis Sarl. Tous droits réservés.</p>
+                <p>&copy; 2026 Aurea Solis Sarl. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
@@ -1112,31 +1242,31 @@
     </script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
-            
+
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             });
-            
+
             // Category filter
             const categoryBtns = document.querySelectorAll('.category-btn');
             const articles = document.querySelectorAll('.article-card');
-            
+
             categoryBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     // Remove active class from all buttons
                     categoryBtns.forEach(b => b.classList.remove('active'));
                     // Add active class to clicked button
                     btn.classList.add('active');
-                    
+
                     const category = btn.getAttribute('data-category');
-                    
+
                     // Filter articles
                     articles.forEach(article => {
                         if (category === 'all' || article.getAttribute('data-category') === category) {
@@ -1147,10 +1277,10 @@
                     });
                 });
             });
-            
+
             // Pagination
             const paginationBtns = document.querySelectorAll('.pagination-btn');
-            
+
             paginationBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     if (!btn.classList.contains('disabled')) {
@@ -1160,25 +1290,25 @@
                         if (!btn.querySelector('i')) {
                             btn.classList.add('active');
                         }
-                        
+
                         // Here you would normally load new articles
                         console.log('Loading page:', btn.textContent);
                     }
                 });
             });
-            
+
             // Newsletter form
             const newsletterForm = document.querySelector('.newsletter-form');
-            
-            newsletterForm.addEventListener('submit', function(e) {
+
+            newsletterForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 const email = this.querySelector('input[type="email"]').value;
-                
+
                 // Simulate subscription
                 alert('Merci pour votre inscription ! Vous recevrez bientôt nos actualités.');
                 this.reset();
             });
-            
+
             // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
@@ -1188,14 +1318,14 @@
                     navbar.classList.remove('scrolled');
                 }
             });
-            
+
             // Article data (for demonstration)
             const articlesData = [
                 {
                     category: 'innovation',
                     categoryLabel: 'Innovations',
                     image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                    date: '25 Septembre 2023',
+                    date: '25 Septembre 2026',
                     readingTime: '4 min',
                     title: 'Nouveaux matériaux pour panneaux solaires : efficacité +20%',
                     excerpt: 'Découvrez les dernières avancées en matière de cellules photovoltaïques et leur application en Afrique.',
@@ -1205,19 +1335,19 @@
                     category: 'technique',
                     categoryLabel: 'Conseils Techniques',
                     image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-                    date: '18 Septembre 2023',
+                    date: '18 Septembre 2026',
                     readingTime: '3 min',
                     title: 'Comment calculer vos besoins énergétiques pour une installation solaire',
                     excerpt: 'Guide pratique pour dimensionner correctement votre système photovoltaïque.',
                     link: 'article-calcul.html'
                 }
             ];
-            
+
             // Function to add more articles dynamically
             function addArticles() {
                 const template = document.getElementById('article-template').innerHTML;
                 const container = document.querySelector('.articles-grid');
-                
+
                 articlesData.forEach(article => {
                     let html = template
                         .replace(/{{category}}/g, article.category)
@@ -1228,19 +1358,19 @@
                         .replace(/{{title}}/g, article.title)
                         .replace(/{{excerpt}}/g, article.excerpt)
                         .replace(/{{link}}/g, article.link);
-                    
+
                     // Append to container (you could insert at the beginning or end)
                     // container.insertAdjacentHTML('beforeend', html);
                 });
             }
-            
+
             // Uncomment to add dynamic articles
             // addArticles();
-            
+
             // Load more articles on scroll (simulated)
             window.addEventListener('scroll', () => {
                 const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-                
+
                 if (scrollTop + clientHeight >= scrollHeight - 100) {
                     // In a real app, you would load more articles here
                     console.log('Load more articles...');
@@ -1249,4 +1379,5 @@
         });
     </script>
 </body>
+
 </html>

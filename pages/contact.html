@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --primary: #FFC107;
             --primary-dark: #D4A017;
             --primary-light: #FFD54F;
             --primary-gradient: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
-            
+
             --secondary: #19191e;
             --secondary-dark: #000000;
             --secondary-light: #000000;
             --secondary-gradient: linear-gradient(135deg, #19191e 0%, #000000 100%);
-            
+
             --white: #FFFFFF;
             --light: #F8F9FA;
             --light-gray: #E9ECEF;
             --gray: #6C757D;
             --dark-gray: #495057;
             --dark: #212529;
-            
+
             --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
             --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            
+
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
             --radius-full: 50px;
-            
+
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            
+
             --font-heading: 'Montserrat', sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
@@ -63,7 +66,12 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             font-family: var(--font-heading);
             font-weight: 800;
             line-height: 1.2;
@@ -71,9 +79,17 @@
             margin-bottom: 1.5rem;
         }
 
-        h1 { font-size: 3.75rem; }
-        h2 { font-size: 3rem; }
-        h3 { font-size: 2rem; }
+        h1 {
+            font-size: 3.75rem;
+        }
+
+        h2 {
+            font-size: 3rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+        }
 
         p {
             font-size: 1.125rem;
@@ -513,9 +529,17 @@
 
         /* Responsive */
         @media (max-width: 1200px) {
-            h1 { font-size: 3rem; }
-            h2 { font-size: 2.5rem; }
-            .page-header h1 { font-size: 3rem; }
+            h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2.5rem;
+            }
+
+            .page-header h1 {
+                font-size: 3rem;
+            }
         }
 
         @media (max-width: 992px) {
@@ -523,16 +547,21 @@
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
-            
+
             .footer-content {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
 
         @media (max-width: 768px) {
-            .container { padding: 0 1.5rem; }
-            section { padding: 4rem 0; }
-            
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
             .nav-links {
                 position: fixed;
                 top: 0;
@@ -547,32 +576,32 @@
                 transition: var(--transition);
                 z-index: 999;
             }
-            
+
             .nav-links.active {
                 right: 0;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .nav-cta {
                 display: none;
             }
-            
+
             .page-header {
                 padding-top: 10rem;
                 padding-bottom: 4rem;
             }
-            
+
             .page-header h1 {
                 font-size: 2.5rem;
             }
-            
+
             .form-row {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-info,
             .contact-form-container {
                 padding: 2rem;
@@ -580,40 +609,111 @@
         }
 
         @media (max-width: 576px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            .container { padding: 0 1rem; }
-            .page-header h1 { font-size: 2rem; }
-            .footer-content { grid-template-columns: 1fr; }
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Dropdown CSS */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+            border-top: 3px solid var(--primary);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--dark-gray) !important;
+            padding: 0.75rem 1.5rem !important;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95rem !important;
+            font-weight: 500 !important;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:after {
+            display: none !important;
+            /* No underline on dropdown items */
+        }
+
+        .dropdown-content a:hover {
+            color: var(--primary) !important;
+            background-color: var(--light);
+            padding-left: 2rem !important;
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-container">
-                 <a href="../index.html" class="logo">
-                        <div class="logo-text">
-                            <img src="../assets/img/logo_black.png" alt="" width="100px">
-                            <div class="logo-tagline">Énergie & Innovation</div>
-                        </div>
-                    </a>
-                    
-                
+                <a href="../index.html" class="logo">
+                    <div class="logo-text">
+                        <img src="../assets/img/logo_black.png" alt="" width="100px">
+                        <div class="logo-tagline">Énergie & Innovation</div>
+                    </div>
+                </a>
+
+
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="apropos.html">À propos</a></li>
-                    <li><a href="services.html">Services</a></li>
+                    <li><a href="apropos.html">Qui sommes-nous ?</a></li>
+                    <li class="dropdown">
+                        <a href="services.html" class="dropbtn">Services <i class="fas fa-chevron-down"
+                                style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="services.html?tab=tab1">Energie Solaire</a>
+                            <a href="services.html?tab=tab1">Électricité Industrielle</a>
+                            <a href="services.html?tab=tab2">Automatisation</a>
+                            <a href="services.html?tab=tab2">Solution minière</a>
+                            <a href="services.html?tab=tab3">Solution thermique</a>
+                            <a href="services.html?tab=tab4">Audit et Conseil</a>
+                        </div>
+                    </li>
                     <li><a href="secteurs.html">Secteurs</a></li>
                     <li><a href="actualite.html">Actualités</a></li>
                 </ul>
-                
+
                 <a href="#contact-form" class="nav-cta active">
                     <i class="fas fa-envelope"></i>
                     Contact
                 </a>
-                
+
                 <button class="mobile-menu-btn">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -629,7 +729,7 @@
                 <span class="separator">/</span>
                 <span>Contact</span>
             </div>
-            
+
             <h1>Contactez-nous</h1>
             <p>Parlez-nous de votre projet et obtenez un devis personnalisé pour vos solutions énergétiques.</p>
         </div>
@@ -642,7 +742,7 @@
                 <!-- Contact Info -->
                 <div class="contact-info">
                     <h3>Nos Coordonnées</h3>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-map-marker-alt"></i>
@@ -654,7 +754,7 @@
                             <p>Zone industrielle, Rue des Entrepreneurs</p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone-alt"></i>
@@ -665,7 +765,7 @@
                             <p><a href="tel:+22625123456">+226 25 12 34 56</a></p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -676,7 +776,7 @@
                             <p><a href="mailto:commercial@aureasolis.bf">commercial@aureasolis.bf</a></p>
                         </div>
                     </div>
-                    
+
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-clock"></i>
@@ -704,7 +804,7 @@
                                 <input type="text" id="entreprise" name="entreprise">
                             </div>
                         </div>
-                        
+
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="email">Email *</label>
@@ -715,7 +815,7 @@
                                 <input type="tel" id="telephone" name="telephone">
                             </div>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="service">Service demandé *</label>
                             <select id="service" name="service" required>
@@ -727,7 +827,7 @@
                                 <option value="multiple">Plusieurs services</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="secteur">Secteur d'activité</label>
                             <select id="secteur" name="secteur">
@@ -741,12 +841,13 @@
                                 <option value="autre">Autre</option>
                             </select>
                         </div>
-                        
+
                         <div class="form-group">
                             <label for="message">Description du projet *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet en détail..."></textarea>
+                            <textarea id="message" name="message" rows="5" required
+                                placeholder="Décrivez votre projet en détail..."></textarea>
                         </div>
-                        
+
                         <button type="submit" class="btn btn-primary">
                             <i class="fas fa-paper-plane"></i>
                             Envoyer la demande
@@ -761,17 +862,14 @@
     <section class="map-section">
         <div class="container">
             <h2 class="text-center">Notre Localisation</h2>
-            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">Retrouvez-nous à Ouagadougou pour discuter de votre projet.</p>
-            
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 3rem;">Retrouvez-nous à Ouagadougou pour
+                discuter de votre projet.</p>
+
             <div class="map-container">
                 <!-- Intégration Google Maps -->
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.23051753421883!2d-1.5193858035553112!3d12.365322699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe2eb5934d3555f7%3A0x811aef33e727463e!2sOuagadougou%2C%20Burkina%20Faso!5e0!3m2!1sen!2sfr!4v1695478165439!5m2!1sen!2sfr" 
-                    width="100%" 
-                    height="100%" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d249.23051753421883!2d-1.5193858035553112!3d12.365322699999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xe2eb5934d3555f7%3A0x811aef33e727463e!2sOuagadougou%2C%20Burkina%20Faso!5e0!3m2!1sen!2sfr!4v1695478165439!5m2!1sen!2sfr"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -784,7 +882,8 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-name">AUREA SOLIS</div>
-                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et durabilité au service de votre développement.</p>
+                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et
+                        durabilité au service de votre développement.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -792,7 +891,7 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
@@ -802,17 +901,17 @@
                         <li><a href="services.html">Solutions Thermiques</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Entreprise</h3>
                     <ul class="footer-links">
-                        <li><a href="apropos.html">À Propos</a></li>
+                        <li><a href="apropos.html">Qui sommes-nous ?</a></li>
                         <li><a href="secteurs.html">Nos Secteurs</a></li>
                         <li><a href="actualite.html">Actualités</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Contact Rapide</h3>
                     <ul class="footer-links">
@@ -823,67 +922,67 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="copyright">
-                <p>&copy; 2023 Aurea Solis Sarl. Tous droits réservés.</p>
+                <p>&copy; 2026 Aurea Solis Sarl. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu
             const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
             const navLinks = document.querySelector('.nav-links');
-            
+
             mobileMenuBtn.addEventListener('click', () => {
                 navLinks.classList.toggle('active');
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.toggle('fa-bars');
                 icon.classList.toggle('fa-times');
             });
-            
+
             // Form submission
             const contactForm = document.getElementById('contactForm');
-            
-            contactForm.addEventListener('submit', function(e) {
+
+            contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
-                
+
                 // Récupération des données
                 const formData = new FormData(this);
                 const data = Object.fromEntries(formData);
-                
+
                 // Simulation d'envoi
                 console.log('Données du formulaire:', data);
-                
+
                 // Message de succès
                 alert('Merci pour votre demande ! Nous vous contacterons dans les plus brefs délais.');
-                
+
                 // Réinitialisation du formulaire
                 contactForm.reset();
             });
-            
+
             // Navbar scroll effect
             window.addEventListener('scroll', () => {
                 const navbar = document.querySelector('.navbar');
-                if(window.scrollY > 50) {
+                if (window.scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
             });
-            
+
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    if(this.getAttribute('href') === '#') return;
-                    
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href') === '#') return;
+
                     e.preventDefault();
                     const targetId = this.getAttribute('href');
-                    
-                    if(targetId.startsWith('#')) {
+
+                    if (targetId.startsWith('#')) {
                         const targetElement = document.querySelector(targetId);
-                        if(targetElement) {
+                        if (targetElement) {
                             window.scrollTo({
                                 top: targetElement.offsetTop - 80,
                                 behavior: 'smooth'
@@ -895,4 +994,5 @@
         });
     </script>
 </body>
+
 </html>

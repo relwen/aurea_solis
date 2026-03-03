@@ -1128,6 +1128,51 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Dropdown CSS */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: var(--shadow-lg);
+            border-radius: var(--radius-sm);
+            z-index: 1000;
+            top: 100%;
+            left: 0;
+            padding: 0.5rem 0;
+            border-top: 3px solid var(--primary);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--dark-gray) !important;
+            padding: 0.75rem 1.5rem !important;
+            text-decoration: none;
+            display: block;
+            font-size: 0.95rem !important;
+            font-weight: 500 !important;
+            transition: var(--transition);
+        }
+
+        .dropdown-content a:after {
+            display: none !important;
+            /* No underline on dropdown items */
+        }
+
+        .dropdown-content a:hover {
+            color: var(--primary) !important;
+            background-color: var(--light);
+            padding-left: 2rem !important;
+        }
     </style>
 </head>
 
@@ -1148,8 +1193,19 @@
                     <ul class="nav-links">
                         <li><a href="index.html" class="active">Accueil</a></li>
                         <li><a href="pages/apropos.html">Qui sommes-nous ?</a></li>
-                        <li><a href="pages/services.html">Services</a></li>
-                        <li><a href="pages/secteurs.html">Secteurs</a></li>
+                        <li class="dropdown">
+                            <a href="pages/services.html" class="dropbtn">Services <i class="fas fa-chevron-down"
+                                    style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                            <div class="dropdown-content">
+                                <a href="pages/services.html?tab=tab1">Énergie Solaire</a>
+                                <a href="pages/services.html?tab=tab2">Électricité Industrielle</a>
+                                <a href="pages/services.html?tab=tab3">Automatisation</a>
+                                <a href="pages/services.html?tab=tab4">Solution minière</a>
+                                <a href="pages/services.html?tab=tab5">Solutions Thermiques</a>
+                                <a href="pages/services.html?tab=tab6">Audit et Conseil</a>
+                            </div>
+                        </li>
+                        <!-- <li><a href="pages/secteurs.html">Secteurs</a></li> -->
                     </ul>
 
                     <a href="pages/contact.html" class="nav-cta">
@@ -1213,7 +1269,7 @@
 
                 <!-- Slide 2 - Automatisation Industrielle -->
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
                         alt="Automatisation industrielle">
                     <div class="slide-content">
                         <h1>Solutions Minières</h1>
@@ -1222,7 +1278,7 @@
                         <div class="hero-btns">
                             <a href="pages/services.html" class="btn btn-primary">
                                 <i class="fas fa-cogs"></i>
-                                Automatisation
+                                Nos Services
                             </a>
                             <a href="pages/contact.html" class="btn btn-secondary">
                                 <i class="fas fa-calendar-alt"></i>
@@ -1234,7 +1290,7 @@
 
                 <!-- Slide 4 - Solutions Thermiques -->
                 <div class="carousel-slide">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
                         alt="Solutions thermiques">
                     <div class="slide-content">
                         <h1>Conseil et Audit industriels </h1>
@@ -1397,7 +1453,10 @@
                         <img src="https://images.unsplash.com/photo-1519327232521-1ea2c736d34d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                             alt="Installation électrique">
                     </div>
-
+                    <div class="about-image image-large">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Notre Engagement">
+                    </div>
                 </div>
             </div>
         </div>
@@ -1434,25 +1493,17 @@
                     <div class="value-icon">
                         <i class="fas fa-leaf"></i>
                     </div>
-                    <h3>Durabilité</h3>
-                    <p>Nous privilégions les solutions qui réduisent l'impact environnemental et assurent une
-                        performance à long terme.</p>
+                    <h3>Intégrité</h3>
+                    <p>L'intégrité est notre valeure fondamentale</p>
                 </div>
 
-                <div class="value-card animate-on-scroll">
-                    <div class="value-icon">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3>Partage</h3>
-                    <p>Nous croyons au partage de connaissances et à la formation pour assurer l'autonomie de nos
-                        clients.</p>
-                </div>
+
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section id="process" class="process">
+    <!-- <section id="process" class="process">
         <div class="container">
             <div class="section-header animate-on-scroll">
                 <h2>Notre Processus</h2>
@@ -1496,7 +1547,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- CTA Section -->
     <section id="contact" class="cta">
@@ -1532,10 +1583,12 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="pages/services.html">Énergie Solaire</a></li>
-                        <li><a href="pages/services.html">Électricité Industrielle</a></li>
-                        <li><a href="pages/services.html">Automatisation</a></li>
-                        <li><a href="pages/services.html">Solutions Thermiques</a></li>
+                        <li><a href="pages/services.html?tab=tab1">Énergie Solaire</a></li>
+                        <li><a href="pages/services.html?tab=tab2">Électricité Industrielle</a></li>
+                        <li><a href="pages/services.html?tab=tab3">Automatisation</a></li>
+                        <li><a href="pages/services.html?tab=tab4">Solution minière</a></li>
+                        <li><a href="pages/services.html?tab=tab5">Solutions Thermiques</a></li>
+                        <li><a href="pages/services.html?tab=tab6">Audit et Conseil</a></li>
                     </ul>
                 </div>
 
@@ -1543,7 +1596,7 @@
                     <h3>Entreprise</h3>
                     <ul class="footer-links">
                         <li><a href="pages/apropos.html">Qui sommes-nous?</a></li>
-                        <li><a href="pages/secteurs.html">Nos Secteurs</a></li>
+                        <!-- <li><a href="pages/secteurs.html">Nos Secteurs</a></li> -->
                         <li><a href="pages/contact.html">Contact</a></li>
                     </ul>
                 </div>

@@ -468,8 +468,8 @@
 
         .service-details {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
         }
 
         .service-section {
@@ -854,11 +854,9 @@
             <div class="nav-container">
                 <a href="../index.html" class="logo">
                     <div class="logo-text">
-                        <img src="../assets/img/logo_black.png" alt="" width="100px">
-                        <div class="logo-tagline">Énergie & Innovation</div>
+                        <img src="../assets/img/logo_black.png" alt="Aurea Solis" width="100px">
                     </div>
                 </a>
-
 
                 <ul class="nav-links">
                     <li><a href="../index.html">Accueil</a></li>
@@ -867,12 +865,12 @@
                         <a href="services.html" class="dropbtn active">Services <i class="fas fa-chevron-down"
                                 style="font-size: 0.8em; margin-left: 5px;"></i></a>
                         <div class="dropdown-content">
-                            <a href="services.html?tab=tab1">Énergie Solaire</a>
-                            <a href="services.html?tab=tab2">Électricité Industrielle</a>
+                            <a href="services.html?tab=tab1">Énergie solaire</a>
+                            <a href="services.html?tab=tab2">Électricité industrielle</a>
                             <a href="services.html?tab=tab3">Automatisation</a>
-                            <a href="services.html?tab=tab4">Solution minière</a>
-                            <a href="services.html?tab=tab5">Solutions Thermiques</a>
-                            <a href="services.html?tab=tab6">Conseil et Audit</a>
+                            <a href="services.html?tab=tab4">Solutions minières</a>
+                            <a href="services.html?tab=tab5">Solutions thermiques</a>
+                            <a href="services.html?tab=tab6">Conseil & audit</a>
                         </div>
                     </li>
                     <li><a href="secteurs.html">Secteurs</a></li>
@@ -899,11 +897,8 @@
                 <span>Services</span>
             </div>
 
-            <h1>Nos Services</h1>
-            <p>Aurea Solis accompagne ses clients à chaque étape de leurs projets énergétiques, électriques, industriels
-                et thermiques. Nos services sont organisés en 4 pôles complémentaires pour répondre à tous vos besoins.
-            </p>
-
+            <h1>Nos services</h1>
+            <p>De l’étude initiale à la maintenance, Aurea Solis prend en charge vos projets énergétiques, électriques, industriels et thermiques. Six domaines d’intervention, une même exigence : des installations fiables, sûres et performantes dans la durée.</p>
         </div>
     </header>
 
@@ -911,35 +906,35 @@
     <section id="services-tabs" class="services">
         <div class="container">
             <div class="section-header animate-on-scroll">
-                <h2>Nos Pôles de Services</h2>
-                <p>Découvrez nos 4 pôles complémentaires pour une solution énergétique complète et intégrée.</p>
+                <h2>Nos domaines d’intervention</h2>
+                <p>Six domaines d’intervention, une seule logique : des solutions fiables, dimensionnées pour vos contraintes réelles.</p>
             </div>
 
             <div class="services-tabs animate-on-scroll">
                 <div class="tabs-header">
                     <button class="tab-button active" data-tab="tab1">
                         <i class="fas fa-solar-panel"></i>
-                        Énergie Solaire
+                        Énergie solaire
                     </button>
                     <button class="tab-button" data-tab="tab2">
                         <i class="fas fa-bolt"></i>
-                        Électricité Industrielle
+                        Électricité industrielle
                     </button>
                     <button class="tab-button" data-tab="tab3">
                         <i class="fas fa-cogs"></i>
                         Automatisation
                     </button>
                     <button class="tab-button" data-tab="tab4">
-                        <i class="fas fa-tools"></i>
-                        Solution minière
+                        <i class="fas fa-mountain"></i>
+                        Solutions minières
                     </button>
                     <button class="tab-button" data-tab="tab5">
                         <i class="fas fa-fire"></i>
-                        Solutions Thermiques
+                        Solutions thermiques
                     </button>
                     <button class="tab-button" data-tab="tab6">
-                        <i class="fas fa-search"></i>
-                        Conseil et Audit
+                        <i class="fas fa-chart-line"></i>
+                        Conseil & audit
                     </button>
                 </div>
 
@@ -947,19 +942,48 @@
                     <!-- Tab 1: Énergie Solaire -->
                     <div class="tab-pane active" id="tab1">
                         <div class="service-header">
-                            <h3>Solutions Solaires Innovantes</h3>
-                            <p>Des installations photovoltaïques sur mesure pour garantir l'autonomie énergétique de
-                                votre entreprise et réduire votre empreinte carbone.</p>
+                            <h3>Solaire et stockage, dimensionnés pour vos besoins réels</h3>
+                            <p>Nous concevons, intégrons et maintenons des systèmes photovoltaïques et de stockage pour les sites industriels et miniers, le tertiaire, les sites isolés et le résidentiel. Chaque projet part d’une étude de consommation et des contraintes du réseau, jamais d’un catalogue de matériel.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-solar-panel"></i> Systèmes Hybrides et Autonomes</h4>
+                                <h4><i class="fas fa-drafting-compass"></i> Études & dimensionnement</h4>
                                 <ul class="service-list">
-                                    <li>Installations solaires commerciales et industrielles</li>
-                                    <li>Systèmes hybrides (réseau + solaire + batteries) adaptatifs</li>
-                                    <li>Intégration transparente aux installations électriques existantes</li>
-                                    <li>Maintenance préventive et optimisation des performances</li>
+                                    <li>Analyse de la consommation et étude de faisabilité</li>
+                                    <li>Dimensionnement du champ photovoltaïque et du stockage par batteries (BESS)</li>
+                                    <li>Étude de rentabilité et estimation du retour sur investissement</li>
+                                    <li>Choix des équipements selon les contraintes du site et la disponibilité des pièces</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-network-wired"></i> Centrales solaires & intégration au réseau</h4>
+                                <ul class="service-list">
+                                    <li>Intégration de parcs solaires et de systèmes de stockage aux réseaux moyenne tension existants</li>
+                                    <li>Coexistence avec les centrales thermiques en place et stabilité du réseau</li>
+                                    <li>Spécification des équipements de raccordement : cellules, disjoncteurs, protections</li>
+                                    <li>Lissage des pics de puissance par stockage d’énergie</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-solar-panel"></i> Installations & systèmes hybrides</h4>
+                                <ul class="service-list">
+                                    <li>Installations solaires industrielles, commerciales et résidentielles</li>
+                                    <li>Systèmes hybrides (réseau + solaire + batteries) et installations autonomes</li>
+                                    <li>Intégration aux installations électriques existantes</li>
+                                    <li>Solutions pour sites isolés et zones à coupures fréquentes</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-tools"></i> Maintenance & performance</h4>
+                                <ul class="service-list">
+                                    <li>Maintenance préventive et corrective des installations photovoltaïques</li>
+                                    <li>Suivi de production et détection des baisses de rendement</li>
+                                    <li>Nettoyage, remplacement de composants et remise à niveau</li>
+                                    <li>Optimisation des installations existantes sous-performantes</li>
                                 </ul>
                             </div>
                         </div>
@@ -968,27 +992,50 @@
                     <!-- Tab 2: Électricité Industrielle -->
                     <div class="tab-pane" id="tab2">
                         <div class="service-header">
-                            <h3>Ingénierie & Infrastructures Électriques</h3>
-                            <p>Nous concevons, réalisons et modernisons des installations électriques fiables, sûres et
-                                adaptées aux réalités du terrain industriel.</p>
+                            <h3>Ingénierie et infrastructures électriques</h3>
+                            <p>Nous concevons, réalisons et modernisons des installations électriques basse et moyenne tension fiables, sûres et évolutives, du bâtiment tertiaire au site industriel et minier.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-drafting-compass"></i> Conception et Ingénierie</h4>
+                                <h4><i class="fas fa-project-diagram"></i> Conception & ingénierie</h4>
                                 <ul class="service-list">
-                                    <li>Architecture électrique, schémas de raccordement et de distribution</li>
-                                    <li>Modernisation et mise à niveau d'installations existantes</li>
-                                    <li>Conception et installation d'armoires de puissance</li>
+                                    <li>Architecture électrique et de contrôle, schémas unifilaires</li>
+                                    <li>Schémas de raccordement, de distribution et de réseautique industrielle</li>
+                                    <li>Conception et installation de panneaux de contrôle et d’armoires de puissance</li>
+                                    <li>Modernisation et mise à niveau d’installations existantes</li>
+                                    <li>Calculs de charge et anticipation des capacités futures</li>
                                 </ul>
                             </div>
 
                             <div class="service-section">
-                                <h4><i class="fas fa-network-wired"></i> Câblage & Infrastructure</h4>
+                                <h4><i class="fas fa-bolt"></i> Études électriques & de réseau</h4>
                                 <ul class="service-list">
-                                    <li>Pose de câbles et gestion de l'infrastructure électrique</li>
-                                    <li>Distribution basse tension et alimentation d'équipements</li>
-                                    <li>Extension et préparation de réseaux pour charge lourde</li>
+                                    <li>Écoulement de puissance et compensation réactive</li>
+                                    <li>Court-circuit et coordination des protections</li>
+                                    <li>Analyses Arc Flash et conformité</li>
+                                    <li>Qualité d’onde : harmoniques et résonances</li>
+                                    <li>Démarrage des gros moteurs et stabilité dynamique du réseau (ETAP, PSCAD)</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-file-invoice"></i> Spécifications & approvisionnement</h4>
+                                <ul class="service-list">
+                                    <li>Devis et spécifications techniques d’équipements BT et MT</li>
+                                    <li>Dossiers d’appel d’offres (DAO) et réponses aux questions techniques</li>
+                                    <li>Analyse technique des soumissions et recommandation</li>
+                                    <li>Coordination avec les fabricants et les constructeurs de centrales</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-clipboard-list"></i> Réalisation & documentation</h4>
+                                <ul class="service-list">
+                                    <li>Pose de câbles et mise en place de l’infrastructure électrique</li>
+                                    <li>Distribution basse et moyenne tension, alimentation d’équipements</li>
+                                    <li>Relevés techniques sur site et support en phase de construction</li>
+                                    <li>Documentation technique et mise à jour des plans</li>
                                 </ul>
                             </div>
                         </div>
@@ -997,118 +1044,172 @@
                     <!-- Tab 3: Automatisation -->
                     <div class="tab-pane" id="tab3">
                         <div class="service-header">
-                            <h3>Automatisation & Sécurité des Procédés</h3>
-                            <p>Nous aidons les industries et sites techniques à rendre leurs installations plus
-                                intelligentes, plus efficaces et plus sûres.</p>
+                            <h3>Des installations plus intelligentes et plus sûres</h3>
+                            <p>Nous automatisons les procédés industriels, en améliorons la lisibilité pour les opérateurs et les rendons conformes aux exigences de sécurité.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-industry"></i> Systèmes d'Automatisation Industrielle</h4>
+                                <h4><i class="fas fa-cogs"></i> Systèmes d’automatisation industrielle</h4>
                                 <ul class="service-list">
-                                    <li>Programmation et intégration d'automates (PLC)</li>
+                                    <li>Programmation et intégration d’automates (Allen-Bradley, Schneider)</li>
                                     <li>Interfaces opérateur (HMI) et systèmes de supervision (SCADA)</li>
+                                    <li>Instrumentation : sélection, spécification et intégration des capteurs</li>
                                     <li>Automatisation de lignes de production et de procédés continus</li>
-                                    <li>Optimisation des temps de cycle et réduction des erreurs</li>
+                                    <li>Acquisition, visualisation et exploitation des données de production</li>
+                                    <li>Optimisation des séquences de commande et des temps de cycle</li>
                                 </ul>
                             </div>
 
                             <div class="service-section">
-                                <h4><i class="fas fa-shield-alt"></i> Sécurité et Conformité des Machines</h4>
+                                <h4><i class="fas fa-shield-alt"></i> Sécurité et conformité des machines</h4>
                                 <ul class="service-list">
-                                    <li>Analyses de risques sur les machines et installations critiques</li>
-                                    <li>Conception et implémentation de plans de sécurité adaptés</li>
-                                    <li>Accompagnement vers la conformité aux exigences réglementaires</li>
+                                    <li>Analyses de risques sur machines et installations critiques</li>
+                                    <li>Conception et implémentation de circuits de sécurité (ISO 13849-1)</li>
+                                    <li>Rédaction et exécution de protocoles de validation</li>
+                                    <li>Standards et procédures de cadenassage</li>
+                                    <li>Accompagnement vers la conformité normative et réglementaire</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-headset"></i> Mise en service & support</h4>
+                                <ul class="service-list">
+                                    <li>Essais, mise en service et validation des séquences automatisées</li>
+                                    <li>Intégration OT/IT des systèmes industriels</li>
+                                    <li>Formation des opérateurs et support technique à l’exploitation</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tab 4: Solution minière -->
+                    <!-- Tab 4: Solutions minières -->
                     <div class="tab-pane" id="tab4">
                         <div class="service-header">
-                            <h3>Solutions Spécialisées pour l'Industrie Minière</h3>
-                            <p>Des systèmes robustes, fiables et autonomes conçus spécialement pour répondre aux défis
-                                et aux environnements exigeants du secteur minier africain.</p>
+                            <h3>L’ingénierie électrique au service de la production minière</h3>
+                            <p>Sur un site minier, une panne se compte en heures de production perdues. Nos solutions sont conçues pour les réseaux isolés, les centrales de site et les environnements où la continuité de service n’est pas négociable.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-tools"></i> Équipement & Alimentation Sécurisée</h4>
+                                <h4><i class="fas fa-industry"></i> Production d’énergie & centrales de site</h4>
                                 <ul class="service-list">
-                                    <li>Alimentation électrique continue pour les sites extractifs isolés</li>
-                                    <li>Solutions hybrides (Solaire / Groupes électrogènes) de haute capacité</li>
-                                    <li>Systèmes d'alimentation de secours instantané et redondance énergétique</li>
+                                    <li>Centrales électriques de site : ingénierie, construction, modification et extension</li>
+                                    <li>Intégration de parcs solaires et de systèmes de stockage (BESS) aux réseaux miniers</li>
+                                    <li>Solutions hybrides solaire / groupes électrogènes de forte capacité</li>
+                                    <li>Stabilité des réseaux isolés et lissage des pics de puissance</li>
+                                    <li>Redondance, secours et continuité de service</li>
                                 </ul>
                             </div>
 
                             <div class="service-section">
-                                <h4><i class="fas fa-hard-hat"></i> Automatisation et Supervision Minière</h4>
+                                <h4><i class="fas fa-tachometer-alt"></i> Automatisation & supervision</h4>
                                 <ul class="service-list">
-                                    <li>Automatisation des processus de pompage, ventilation et convoyage</li>
-                                    <li>Supervision globale SCADA pour remonter les données des puits</li>
+                                    <li>Automatisation des systèmes de pompage, de ventilation et de convoyage</li>
+                                    <li>Gestion de la circulation en environnement souterrain</li>
+                                    <li>Supervision SCADA et remontée des données d’exploitation</li>
                                     <li>Fiabilisation énergétique des camps miniers et installations annexes</li>
                                 </ul>
                             </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-hard-hat"></i> Ingénierie, approvisionnement & exploitation</h4>
+                                <ul class="service-list">
+                                    <li>Spécifications techniques d’équipements moyenne tension</li>
+                                    <li>Mise à jour des schémas unifilaires et de la documentation des actifs</li>
+                                    <li>Dossiers d’appel d’offres et analyse technique des soumissions</li>
+                                    <li>Support technique aux opérations, à la maintenance et aux arrêts majeurs</li>
+                                    <li>Analyses Arc Flash, standards de cadenassage et conformité réglementaire</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Tab 5: Solutions Thermiques -->
+                    <!-- Tab 5: Solutions thermiques -->
                     <div class="tab-pane" id="tab5">
                         <div class="service-header">
-                            <h3>Solutions Thermiques & Échangeurs de Chaleur</h3>
-                            <p>Aurea Solis développe un pôle dédié aux solutions thermiques pour répondre aux besoins de
-                                chauffage, de refroidissement et de transfert de chaleur.</p>
+                            <h3>Transfert de chaleur : équipements, études et remise en état</h3>
+                            <p>Un pôle dédié au chauffage, au refroidissement et au transfert de chaleur dans les procédés industriels et les bâtiments tertiaires.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-exchange-alt"></i> Produits & Ingénierie</h4>
+                                <h4><i class="fas fa-boxes"></i> Équipements</h4>
                                 <ul class="service-list">
-                                    <li>Échangeurs de chaleur à plaques, joints, brasés et compacts</li>
-                                    <li>Dimensionnement et sélection des équipements thermiques adaptés</li>
-                                    <li>Optimisation du transfert thermique et des pertes de charge dans les circuits
-                                    </li>
+                                    <li>Échangeurs de chaleur à plaques et joints</li>
+                                    <li>Échangeurs brasés et compacts</li>
+                                    <li>Plaques et joints de rechange compatibles avec les principales marques du marché</li>
+                                    <li>Accessoires : vannes, capteurs, éléments de raccordement</li>
                                 </ul>
                             </div>
 
                             <div class="service-section">
-                                <h4><i class="fas fa-wrench"></i> Entretien & Reconditionnement</h4>
+                                <h4><i class="fas fa-calculator"></i> Études & ingénierie thermique</h4>
                                 <ul class="service-list">
-                                    <li>Nettoyage et reconditionnement d'échangeurs de chaleur en atelier</li>
-                                    <li>Diagnostic de performance, détection de fuites et réparation</li>
-                                    <li>Plaques & joints de rechange multimarques</li>
+                                    <li>Études de besoins et bilans thermiques</li>
+                                    <li>Dimensionnement et sélection des échangeurs</li>
+                                    <li>Optimisation du transfert thermique et des pertes de charge</li>
+                                    <li>Intégration dans les circuits hydrauliques et les procédés existants</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-tools"></i> Entretien & reconditionnement</h4>
+                                <ul class="service-list">
+                                    <li>Nettoyage et reconditionnement d’échangeurs en atelier</li>
+                                    <li>Inspection, diagnostic de performance et détection de fuites</li>
+                                    <li>Remplacement de plaques et joints pour restaurer les performances d’origine</li>
+                                    <li>Contrats de maintenance pour limiter les arrêts de production</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Tab 6: Conseil et Audit -->
+                    <!-- Tab 6: Conseil & audit -->
                     <div class="tab-pane" id="tab6">
                         <div class="service-header">
-                            <h3>Conseil, Audits & Maintenance Globale</h3>
-                            <p>Services transverses pour sécuriser vos investissements, réduire vos coûts d'exploitation
-                                et optimiser la rentabilité de vos équipements.</p>
+                            <h3>Sécuriser vos installations et vos investissements dans la durée</h3>
+                            <p>Des services transverses pour réduire vos coûts d’exploitation, fiabiliser vos installations et prolonger la durée de vie de vos équipements.</p>
                         </div>
 
                         <div class="service-details">
                             <div class="service-section">
-                                <h4><i class="fas fa-chart-line"></i> Audits & Diagnostics</h4>
+                                <h4><i class="fas fa-search"></i> Audits & diagnostics</h4>
                                 <ul class="service-list">
-                                    <li>Audits énergétiques complets des sites, usines et installations</li>
-                                    <li>Analyses fonctionnelles approfondies des systèmes électriques, thermiques et
-                                        solaires</li>
-                                    <li>Élaboration de schémas cibles et de plans d'efficacité énergétique</li>
+                                    <li>Audits énergétiques complets de sites et d’installations</li>
+                                    <li>Analyses fonctionnelles des systèmes électriques, solaires, automatisés et thermiques</li>
+                                    <li>Plans d’efficacité énergétique et schémas cibles</li>
+                                    <li>Recommandations chiffrées pour réduire la facture énergétique</li>
                                 </ul>
                             </div>
 
                             <div class="service-section">
-                                <h4><i class="fas fa-clipboard-check"></i> Maintenance Préventive & Fournitures</h4>
+                                <h4><i class="fas fa-wrench"></i> Maintenance préventive & corrective</h4>
                                 <ul class="service-list">
-                                    <li>Gestion complète de la maintenance préventive personnalisée</li>
-                                    <li>Fourniture de pièces de rechange certifiées (disjoncteurs, joints, capteurs)
-                                    </li>
-                                    <li>Suivi d'exploitation régulier pour anticiper les baisses de productivité</li>
+                                    <li>Plans de maintenance préventive sur mesure</li>
+                                    <li>Interventions correctives en cas de panne ou de dysfonctionnement</li>
+                                    <li>Contrats de service : visites périodiques, support technique, assistance à distance</li>
+                                    <li>Documentation et suivi des actifs dans le temps</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-cogs"></i> Fourniture d’équipements & pièces</h4>
+                                <ul class="service-list">
+                                    <li>Équipements électriques, solaires et thermiques</li>
+                                    <li>Composants : câbles, disjoncteurs, protections, capteurs, accessoires</li>
+                                    <li>Plaques et joints de rechange pour échangeurs de chaleur</li>
+                                    <li>Sélection adaptée aux contraintes locales : qualité du réseau, environnement, disponibilité des pièces</li>
+                                </ul>
+                            </div>
+
+                            <div class="service-section">
+                                <h4><i class="fas fa-tasks"></i> Gestion de projets</h4>
+                                <ul class="service-list">
+                                    <li>Gestion de projets techniques et coordination de chantier</li>
+                                    <li>Planification, suivi de l’avancement et coordination des parties prenantes</li>
+                                    <li>Mise en service, essais et optimisation</li>
+                                    <li>Formation des équipes d’exploitation</li>
                                 </ul>
                             </div>
                         </div>
@@ -1122,12 +1223,11 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content animate-on-scroll">
-                <h2>Besoin d'un Service Spécifique ?</h2>
-                <p>Contactez-nous pour discuter de vos besoins et obtenir une solution sur mesure adaptée à votre
-                    secteur d'activité.</p>
+                <h2>Un besoin qui couvre plusieurs domaines ?</h2>
+                <p>C’est le cas de la plupart de nos mandats. Décrivez-nous votre situation : un ingénieur vous répond avec une première lecture technique.</p>
                 <a href="contact.html" class="btn btn-white">
                     <i class="fas fa-paper-plane"></i>
-                    Demander un Devis
+                    Demander un devis
                 </a>
             </div>
         </div>
@@ -1138,26 +1238,26 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="logo-name">AUREA SOLIS</div>
-                    <p>Leader en solutions énergétiques et industrielles au Burkina Faso. Innovation, fiabilité et
-                        durabilité au service de votre développement.</p>
+                    <div class="logo-name" style="color: var(--white); font-weight: 800; font-size: 1.6rem; letter-spacing: 0.5px; margin-bottom: 1rem;">
+                        <span style="color: var(--primary);">AUREA</span> SOLIS SARL
+                    </div>
+                    <p>L'ingénierie énergétique aux standards internationaux, ancrée en Afrique de l'Ouest. De l'étude à la mise en service, un engagement technique qui va au-delà de la livraison.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html?tab=tab1">Énergie Solaire</a></li>
-                        <li><a href="services.html?tab=tab2">Électricité Industrielle</a></li>
+                        <li><a href="services.html?tab=tab1">Énergie solaire</a></li>
+                        <li><a href="services.html?tab=tab2">Électricité industrielle</a></li>
                         <li><a href="services.html?tab=tab3">Automatisation</a></li>
-                        <li><a href="services.html?tab=tab4">Solution minière</a></li>
-                        <li><a href="services.html?tab=tab5">Solutions Thermiques</a></li>
-                        <li><a href="services.html?tab=tab6">Conseil et Audit</a></li>
+                        <li><a href="services.html?tab=tab4">Solutions minières</a></li>
+                        <li><a href="services.html?tab=tab5">Solutions thermiques</a></li>
+                        <li><a href="services.html?tab=tab6">Conseil & audit</a></li>
                     </ul>
                 </div>
 
@@ -1165,7 +1265,8 @@
                     <h3>Entreprise</h3>
                     <ul class="footer-links">
                         <li><a href="apropos.html">Qui sommes-nous ?</a></li>
-                        <li><a href="secteurs.html">Nos Secteurs</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="secteurs.html">Secteurs</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
@@ -1173,16 +1274,17 @@
                 <div class="footer-column">
                     <h3>Contact</h3>
                     <ul class="footer-links">
-                        <li><a href="mailto:contact@aureasolis.bf">contact@aureasolis.bf</a></li>
-                        <li><a href="tel:+22670123456">+226 70 12 34 56</a></li>
-                        <li><a href="#">Ouagadougou, Burkina Faso</a></li>
-                        <li><a href="contact.html">Demander un Devis</a></li>
+                        <li><i class="fas fa-map-marker-alt" style="color: var(--primary); margin-right: 8px;"></i> Gounghin, Secteur 08 — Ouagadougou</li>
+                        <li><i class="fas fa-mail-bulk" style="color: var(--primary); margin-right: 8px;"></i> 09 BP 1334 Ouagadougou 09, Burkina Faso</li>
+                        <li><i class="fas fa-phone-alt" style="color: var(--primary); margin-right: 8px;"></i> <a href="tel:+22666593474">+226 66 59 34 74</a> / <a href="tel:+22676746263">+226 76 74 62 63</a></li>
+                        <li><i class="fas fa-envelope" style="color: var(--primary); margin-right: 8px;"></i> <a href="mailto:info@aureasolis.com">info@aureasolis.com</a></li>
+                        <li style="margin-top: 1rem;"><a href="contact.html" style="color: var(--primary); font-weight: 600;">Demander un devis &rarr;</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="copyright">
-                <p>&copy; 2026 Aurea Solis Sarl. Tous droits réservés.</p>
+                <p>&copy; 2026 Aurea Solis SARL. Tous droits réservés.</p>
             </div>
         </div>
     </footer>

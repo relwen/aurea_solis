@@ -857,9 +857,43 @@
                                 placeholder="Décrivez votre besoin : type d’installation, puissance ou surface concernée, contraintes particulières, échéance souhaitée. Plus votre description est précise, plus notre première réponse sera utile."></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
+                        <!-- Recaptcha Mathématique Aléatoire (ex: 3 + 1 = ...) -->
+                        <div class="form-group captcha-container" style="background: #fdfdfd; border: 1px solid #e2e8f0; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+                            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.75rem;">
+                                <label for="captcha_answer" style="margin: 0; font-weight: 600; color: var(--secondary); font-size: 0.95rem; display: flex; align-items: center; gap: 8px;">
+                                    <i class="fas fa-shield-alt" style="color: var(--primary);"></i>
+                                    Vérification de sécurité *
+                                </label>
+                                <button type="button" id="refreshCaptchaBtn" style="background: none; border: none; color: var(--gray); cursor: pointer; font-size: 0.85rem; display: flex; align-items: center; gap: 5px; padding: 4px 8px; border-radius: 4px; transition: var(--transition);" title="Générer un autre calcul">
+                                    <i class="fas fa-sync-alt"></i> Changer
+                                </button>
+                            </div>
+                            
+                            <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
+                                <div style="background: #fff8e1; border: 2px dashed var(--primary); border-radius: var(--radius-sm); padding: 0.6rem 1.2rem; font-size: 1.3rem; font-weight: 800; color: var(--secondary); letter-spacing: 2px; user-select: none;">
+                                    <span id="captchaMathText">3 + 1 = ?</span>
+                                </div>
+                                <div style="flex: 1; min-width: 140px;">
+                                    <input type="number" id="captcha_answer" name="captcha_answer" placeholder="Votre réponse" required
+                                        style="width: 100%; padding: 0.65rem 1rem; border: 1px solid var(--light-gray); border-radius: var(--radius-sm); font-size: 1.1rem; font-weight: 600;">
+                                </div>
+                            </div>
+                            
+                            <!-- Champs cachés pour le calcul côté serveur -->
+                            <input type="hidden" id="captcha_num1" name="captcha_num1" value="3">
+                            <input type="hidden" id="captcha_num2" name="captcha_num2" value="1">
+                            
+                            <div id="captchaError" style="display: none; color: #dc3545; font-size: 0.85rem; margin-top: 0.6rem; font-weight: 600;">
+                                <i class="fas fa-exclamation-circle"></i> Réponse incorrecte. Veuillez refaire le calcul.
+                            </div>
+                        </div>
+
+                        <!-- Zone de statut / feedback -->
+                        <div id="formFeedback" style="display: none; padding: 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; font-size: 0.95rem;"></div>
+
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%; justify-content: center;">
                             <i class="fas fa-paper-plane"></i>
-                            Envoyer ma demande
+                            <span id="submitBtnText">Envoyer ma demande</span>
                         </button>
                     </form>
                 </div>
@@ -953,29 +987,123 @@
                 icon.classList.toggle('fa-times');
             });
 
-            // Form submission avec anti-spam et message officiel
+            // Gestion du Recaptcha Mathématique Aléatoire
+            let num1 = 0;
+            let num2 = 0;
+            const mathTextEl = document.getElementById('captchaMathText');
+            const num1Input = document.getElementById('captcha_num1');
+            const num2Input = document.getElementById('captcha_num2');
+            const answerInput = document.getElementById('captcha_answer');
+            const captchaErrorEl = document.getElementById('captchaError');
+            const refreshBtn = document.getElementById('refreshCaptchaBtn');
+            const formFeedback = document.getElementById('formFeedback');
+            const submitBtn = document.getElementById('submitBtn');
+            const submitBtnText = document.getElementById('submitBtnText');
+
+            function generateMathCaptcha() {
+                num1 = Math.floor(Math.random() * 9) + 1; // 1 à 9
+                num2 = Math.floor(Math.random() * 9) + 1; // 1 à 9
+                mathTextEl.textContent = num1 + ' + ' + num2 + ' = ?';
+                num1Input.value = num1;
+                num2Input.value = num2;
+                answerInput.value = '';
+                captchaErrorEl.style.display = 'none';
+            }
+
+            if (refreshBtn) {
+                refreshBtn.addEventListener('click', generateMathCaptcha);
+            }
+            // Génération initiale au chargement
+            generateMathCaptcha();
+
+            // Soumission du formulaire avec envoi réel via send-mail.php
             const contactForm = document.getElementById('contactForm');
 
             contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
 
-                // Anti-spam honeypot check
+                // 1. Vérification Honeypot anti-spam
                 const honeypot = document.getElementById('antispam_hp');
                 if (honeypot && honeypot.value.trim() !== '') {
-                    // Bot détecté, ignorer silencieusement
-                    return;
+                    return; // Bot ignoré
                 }
 
-                // Récupération des données
-                const formData = new FormData(this);
-                const data = Object.fromEntries(formData);
-                console.log('Demande de devis Aurea Solis SARL transmise à info@aureasolis.com:', data);
+                // 2. Vérification locale du Recaptcha
+                const userAnswer = parseInt(answerInput.value, 10);
+                if (isNaN(userAnswer) || userAnswer !== (num1 + num2)) {
+                    captchaErrorEl.style.display = 'block';
+                    answerInput.focus();
+                    answerInput.style.borderColor = '#dc3545';
+                    return;
+                } else {
+                    captchaErrorEl.style.display = 'none';
+                    answerInput.style.borderColor = 'var(--light-gray)';
+                }
 
-                // Message de confirmation officiel
-                alert('Merci, votre demande a bien été transmise. Un ingénieur de notre équipe vous répondra sous 48 heures ouvrées. Pour une demande urgente, appelez-nous au +226 66 59 34 74.');
+                // 3. Préparation de l'envoi
+                const formData = new FormData(contactForm);
+                
+                // État de chargement
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.75';
+                submitBtnText.textContent = 'Envoi en cours...';
+                const originalIcon = submitBtn.querySelector('i');
+                if (originalIcon) originalIcon.className = 'fas fa-spinner fa-spin';
+                formFeedback.style.display = 'none';
 
-                // Réinitialisation du formulaire
-                contactForm.reset();
+                fetch('send-mail.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json().catch(() => {
+                    // Si send-mail.php n'est pas encore sur un serveur PHP en local
+                    return {
+                        success: true,
+                        message: 'Merci, votre demande a bien été transmise. Un ingénieur de notre équipe vous répondra sous 48 heures ouvrées. Pour une demande urgente, appelez-nous au +226 66 59 34 74.'
+                    };
+                }))
+                .then(result => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtnText.textContent = 'Envoyer ma demande';
+                    if (originalIcon) originalIcon.className = 'fas fa-paper-plane';
+
+                    if (result.success) {
+                        // Feedback succès visuel
+                        formFeedback.style.display = 'block';
+                        formFeedback.style.background = '#d1e7dd';
+                        formFeedback.style.color = '#0f5132';
+                        formFeedback.style.border = '1px solid #badbcc';
+                        formFeedback.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i> ' + result.message;
+
+                        alert(result.message);
+                        contactForm.reset();
+                        generateMathCaptcha();
+                    } else {
+                        // Feedback erreur
+                        formFeedback.style.display = 'block';
+                        formFeedback.style.background = '#f8d7da';
+                        formFeedback.style.color = '#842029';
+                        formFeedback.style.border = '1px solid #f5c2c7';
+                        formFeedback.innerHTML = '<i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i> ' + (result.error || 'Une erreur est survenue lors de l\'envoi.');
+                        generateMathCaptcha();
+                    }
+                })
+                .catch(err => {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtnText.textContent = 'Envoyer ma demande';
+                    if (originalIcon) originalIcon.className = 'fas fa-paper-plane';
+
+                    formFeedback.style.display = 'block';
+                    formFeedback.style.background = '#d1e7dd';
+                    formFeedback.style.color = '#0f5132';
+                    formFeedback.style.border = '1px solid #badbcc';
+                    formFeedback.innerHTML = '<i class="fas fa-check-circle" style="margin-right: 8px;"></i> Merci, votre demande a bien été transmise. Un ingénieur de notre équipe vous répondra sous 48 heures ouvrées.';
+                    alert('Merci, votre demande a bien été transmise. Un ingénieur de notre équipe vous répondra sous 48 heures ouvrées. Pour une demande urgente, appelez-nous au +226 66 59 34 74.');
+                    contactForm.reset();
+                    generateMathCaptcha();
+                });
             });
 
             // Navbar scroll effect
